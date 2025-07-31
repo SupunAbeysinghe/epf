@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPF Online Services Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.4;
+            background-color: #f5f5f5;
+        }
+        .form-container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #003366;
+            padding-bottom: 20px;
+        }
+        .header h1 {
+            color: #003366;
+            margin: 0;
+            font-size: 24px;
+        }
+        .header h2 {
+            color: #0066cc;
+            margin: 10px 0 0 0;
+            font-size: 18px;
+        }
+        .mandatory-note {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #856404;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"],
+        .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        .form-group textarea {
+            height: 80px;
+            resize: vertical;
+        }
+        .checkbox-group {
+            margin: 15px 0;
+        }
+        .checkbox-group input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .bank-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .bank-option {
+            display: flex;
+            align-items: center;
+        }
+        .bank-option input[type="radio"] {
+            margin-right: 8px;
+        }
+        .authorization-section {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 30px 0;
+            border-left: 4px solid #003366;
+        }
+        .authorization-section h3 {
+            color: #003366;
+            margin-top: 0;
+        }
+        .signature-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .instructions {
+            background-color: #e7f3ff;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 30px 0;
+            border-left: 4px solid #0066cc;
+        }
+        .instructions h3 {
+            color: #0066cc;
+            margin-top: 0;
+        }
+        .instructions ul {
+            padding-left: 20px;
+        }
+        .instructions li {
+            margin-bottom: 10px;
+        }
+        .terms-section {
+            background-color: #fff8e1;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 30px 0;
+            border-left: 4px solid #ff9800;
+        }
+        .terms-section h3 {
+            color: #e65100;
+            margin-top: 0;
+        }
+        .terms-list {
+            max-height: 300px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            padding: 15px;
+            background: white;
+            border-radius: 4px;
+        }
+        .final-signature {
+            border-top: 2px solid #003366;
+            padding-top: 20px;
+            margin-top: 30px;
+        }
+        .contact-info {
+            background-color: #f0f8ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .example-text {
+            color: #666;
+            font-style: italic;
+            font-size: 12px;
+        }
+        .sub-label {
+            font-weight: normal;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div class="header">
+            <h1>Registration Form</h1>
+            <h2>Employees' Provident Fund – 'EPF Online Services'</h2>
+        </div>
+
+        <div class="mandatory-note">
+            All the fields are mandatory
+        </div>
+
+        <form>
+            <div class="form-group">
+                <label for="company-name">1. Name of the Company</label>
+                <input type="text" id="company-name" name="company-name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="employer-number">2. Employer Number</label>
+                <input type="text" id="employer-number" name="employer-number" placeholder="Eg: A/099999" required>
+                <div class="example-text">Eg: A/099999</div>
+            </div>
+
+            <div class="form-group">
+                <label for="postal-address">3. Postal Address</label>
+                <textarea id="postal-address" name="postal-address" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>4. Contact Detail: <span class="sub-label">(This should be the officer who handles EPF matters on behalf of the Company)</span></label>
+                
+                <div class="form-group">
+                    <label for="contact-person">4.1. Contact Person</label>
+                    <input type="text" id="contact-person" name="contact-person" required>
+                </div>
+
+                <div class="form-group">
+                    <label>4.2. Telephone Numbers:</label>
+                    <div style="margin-left: 20px;">
+                        <div class="form-group">
+                            <label for="landline">4.2.1. Landline</label>
+                            <input type="tel" id="landline" name="landline" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mobile">4.2.2. Mobile</label>
+                            <input type="tel" id="mobile" name="mobile" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>4.3. E-mail Address:</label>
+                    <div style="margin-left: 20px;">
+                        <div class="form-group">
+                            <label for="company-email">4.3.1. Company/ Main</label>
+                            <input type="email" id="company-email" name="company-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">4.3.2. Contact Person</label>
+                            <input type="email" id="contact-email" name="contact-email" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>5. Mode of Payment (Please tick as appropriate)</label>
+                <div class="checkbox-group">
+                    <label>
+                        <input type="checkbox" name="payment-mode" value="online"> On-Line
+                    </label>
+                    <label>
+                        <input type="checkbox" name="payment-mode" value="cheque"> Cheque
+                    </label>
+                    <label>
+                        <input type="checkbox" name="payment-mode" value="direct-debit"> Direct Debit
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label>Name of the Bank (*if online)</label>
+                    <div class="bank-options">
+                        <div class="bank-option">
+                            <input type="radio" id="boc" name="bank" value="bank-of-ceylon">
+                            <label for="boc">Bank of Ceylon</label>
+                        </div>
+                        <div class="bank-option">
+                            <input type="radio" id="peoples" name="bank" value="peoples-bank">
+                            <label for="peoples">People's Bank</label>
+                        </div>
+                        <div class="bank-option">
+                            <input type="radio" id="commercial" name="bank" value="commercial-bank">
+                            <label for="commercial">Commercial Bank</label>
+                        </div>
+                        <div class="bank-option">
+                            <input type="radio" id="sampath" name="bank" value="sampath-bank">
+                            <label for="sampath">Sampath Bank</label>
+                        </div>
+                        <div class="bank-option">
+                            <input type="radio" id="nations-trust" name="bank" value="nations-trust-bank">
+                            <label for="nations-trust">Nations Trust Bank</label>
+                        </div>
+                        <div class="bank-option">
+                            <input type="radio" id="pan-asia" name="bank" value="pan-asia-bank">
+                            <label for="pan-asia">Pan Asia Bank</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="authorization-section">
+                <h3>AUTHORIZATION</h3>
+                <p>This should be signed by the Owner/ Managing Director/ Chief Executive Officer or by the Highest Position of the Company.</p>
+                <p><strong>I hereby declare and agree that the information provided above is true and correct.</strong></p>
+                
+                <div class="signature-section">
+                    <div class="form-group">
+                        <label for="auth-officer-name">Name of the Authorizing Officer:</label>
+                        <input type="text" id="auth-officer-name" name="auth-officer-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="designation">Designation:</label>
+                        <input type="text" id="designation" name="designation" required>
+                    </div>
+                </div>
+                
+                <div class="signature-section">
+                    <div class="form-group">
+                        <label for="auth-date">Date:</label>
+                        <input type="date" id="auth-date" name="auth-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Signature & Official Seal</label>
+                        <div style="border: 1px solid #ddd; height: 60px; background: #f9f9f9; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: #666;">
+                            [Signature & Official Seal Area]
+                        </div>
+                    </div>
+                </div>
+                
+                <p style="margin-top: 15px; font-size: 14px;">
+                    <strong>(Attach a copy of the 'Certificate of Employer Registration' issued by the Department of Labour)</strong>
+                </p>
+            </div>
+
+            <div class="instructions">
+                <h3>INSTRUCTIONS & SPECIAL NOTE:</h3>
+                <ol>
+                    <li>The duly filled 'Registration Form' and supporting documents mentioned under '2' of the terms and conditions should be:
+                        <ul>
+                            <li>E-mail to <strong>help.epfonline@cbsl.lk</strong> as colored scanned copies or</li>
+                            <li>Post to Superintendent, EPF Department, Central Bank of Sri Lanka, No 25, Whiteaways Building, Sir Baron Jayathilake Mawatha, Colombo 01</li>
+                        </ul>
+                    </li>
+                    <li>Once registered, contribution details can be submitted to EPF Department's website and proceed with the payment.</li>
+                    <li>Mode of payment – Online Banking facilities are available with Bank of Ceylon, People's Bank, Commercial Bank and Nations' Trust Bank. Cheques can be handed over to the counters of People's Bank.</li>
+                    <li>When paying through cheques, it is required to submit a copy of the payment voucher along with the cheque. However, the physical 'C' Form need not to be submitted.</li>
+                </ol>
+                
+                <div class="contact-info">
+                    <strong>For Inquiries:</strong> 0112-477022, 0112-477050, 0112-477272, 0112-477475 or 0112-477971
+                </div>
+            </div>
+
+            <div class="terms-section">
+                <h3>TERMS & CONDITIONS</h3>
+                <div class="terms-list">
+                    <ol>
+                        <li>The service of "EPF Online Services" is for the sole and exclusive use by the registered employer.</li>
+                        <li>Employer is required to provide a copy of the "Employer Registration Certificate" issued by the Department of Labour along with the registration form. In case of unavailability of Employer Registration Certificate, sufficient proofs are required to be provided to establish that the respective employer is a legal entity. The Employees' Provident Fund Department (EPFD) reserves the rights to decide the acceptability of such proofs on case by case basis.</li>
+                        <li>Upon EPFD accepting the employers request made through the 'Registration Form', the employer will be issued with a User ID and a Password to login to "EPF Online Services" and the same will be informed to the authorizing officer by registered post.</li>
+                        <li>In the case of failing the submission of data file/s ('C' Forms) to the EPF online system due to errors; the employer is required to take necessary steps to rectify the issues and resubmit the relevant file. If name and/or NIC amendments are required, employer will have to inform the same to the EPFD via the 'registered e-mail address' of the company, given under the '4.3.1. Main' which will be considered as the 'verified source of correspondence' for all matters relating to the EPFD and employer.</li>
+                        <li>The User ID and Password are strictly confidential and at no time and under no circumstances shall the employer disclose the User ID and Password to any unauthorized party.</li>
+                        <li>The employer agrees to report EPFD immediately upon becoming aware that the User ID/Password has fallen into hands of any unauthorized party.</li>
+                        <li>The employer shall be fully responsible for any accidental or unauthorized disclosure of the User ID/Password to any other person and shall bear the risks of the User ID/Password being used by unauthorized persons or for unauthorized purposes.</li>
+                        <li>The employer undertakes to hold the EPFD harmless and indemnify the EPFD from any loss or liability or damage incurred by the EPFD as a result of any misuse of the User ID/Password.</li>
+                        <li>Employer may request for a new User ID by forwarding a fresh 'Registration Form' to the EPFD. However, only one user account will remain active at a time.</li>
+                        <li>In the case of activating the existing user account or resetting the password, employer is required to make a request by electronic means through the e-mail ID which is provided in the '4.3.1. Main' of the 'Registration Form'.</li>
+                        <li>The employer agrees to accept full responsibility for all transactions processed from the use of the "EPF Online Services".</li>
+                        <li>The employer agrees to accept the EPFD's record of transactions as conclusive and binding for all purposes.</li>
+                        <li>The employer shall provide such information as the EPFD may reasonably request from time to time for the purposes of providing the services relating to "EPF Online Services".</li>
+                        <li>The EPFD reserves the right to modify/not to process or delay processing of any instruction given by the employer using the "EPF Online Services".</li>
+                        <li>The employer agrees not to hold the EPFD liable, responsible or accountable in anyway whatsoever arising by any malfunctions or failure of the "EPF Online Services" or on the failure or delay of the EPFD to act on the instructions given via "EPF Online Services".</li>
+                        <li>The employer agrees to use the "EPF Online Services" at his sole risk and agrees to accept any and all risk incidental to or arising out of the use of "EPF Online Services".</li>
+                        <li>Usage of "EPF Online Services" will be subjected to scrutiny from time to time and EPFD shall be at liberty to terminate the services of "EPF Online Services" at its absolute discretion at any time and without notice to the employer.</li>
+                        <li>By registering to use "EPF Online Services" employer warrants that all information provided by the employer to the EPFD in relation to this service are true, complete and up-to-date.</li>
+                        <li>The employer agrees the EPFD has the authority to revoke the employer's registration, at any time, without prior notice.</li>
+                        <li>The employer shall keep the EPFD indemnified at all times against claims, demands, actions, proceedings, damages, losses, costs, and expenses which may be brought against or incurred by the EPFD and which shall or may or may arise directly or indirectly out of or in connection with the "EPF Online Services" consequent to any failure, breach, negligence, commission or omission or representation on the part of the employer or its' agents or servants unless due to the willful default of the EPFD and this indemnity shall continue to be valid and effectual notwithstanding the termination of the registration of the employer.</li>
+                        <li>The EPFD reserves the right to determine the terms and conditions from time to time including, without limitation:
+                            <ul>
+                                <li>Expanding or modifying the existing terms and conditions</li>
+                                <li>Imposing or varying the terms and conditions</li>
+                                <li>Prescribing and changing the service hours which the services are available.</li>
+                            </ul>
+                            Any revision and/or addition to these terms and conditions shall become effective subject to the EPFD giving reasonable notice to the employer which may be given by publishing it on the EPFD website or other means as the EPFD thinks fit, and shall be binding on the employer if the employer continues to use of the "EPF Online Services" on or after the effective date of the variation.
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="final-signature">
+                <p>By signing below, the employer confirms having read and understood the Terms and Conditions governing "EPF Online Services" and agrees to abide by them as well and any additional terms and conditions presented in the web site and updated from time to time.</p>
+                
+                <div class="signature-section">
+                    <div class="form-group">
+                        <label for="final-date">Date:</label>
+                        <input type="date" id="final-date" name="final-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Authorizing Officer - Signature & Official Seal</label>
+                        <div style="border: 1px solid #ddd; height: 60px; background: #f9f9f9; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: #666;">
+                            [Signature & Official Seal Area]
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
